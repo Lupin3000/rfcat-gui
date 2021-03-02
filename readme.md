@@ -1,6 +1,10 @@
 # RfCat-GUI
 
-**Super important**
+Feel free to use this software as is for personal use only. Do not use this code in other projects or in commercial products. I am not responsible for issues, mistakes or illegal activities. 
+
+**Again:** I hold no liability for your actions with this code.
+
+**Also important:**
 
 This project is just started ... what does it mean?
 
@@ -10,6 +14,7 @@ This project is just started ... what does it mean?
 - missing feature: detailed validations for values (_just high level implementation_)
 - missing feature: receive into text area
 - missing feature: many rfcat options are not visible or deactivated yet
+- missing feature: UX (_not sure if needed but could imagen_)
 - etc.
 
 ## Build
@@ -42,5 +47,7 @@ $ cd rfcat-gui/dist/
 # run application
 $ open -a RfCat-GUI.app 
 ```
+
+You should see following now:
 
 ![RfCat GUI](./github-src/example-picture.jpg)
