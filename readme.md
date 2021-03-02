@@ -1,8 +1,16 @@
 # RfCat-GUI
 
-**important**
+**Super important**
 
-This project is just started ... what is currently available is just a simple mockup (some parts do not work yet and no testing done yet)
+This project is just started ... what does it mean?
+
+- only Python 3.x support (_Python 2.x missing_)
+- available is just a simple mockup
+- just few parts are working now (_but not tested_)
+- missing feature: detailed validations for values (_just high level implementation_)
+- missing feature: receive into text area
+- missing feature: many rfcat options are not visible or deactivated yet
+- etc.
 
 ## Build
 
