@@ -13,7 +13,7 @@ class ApplicationUi(BaseUi):
     __FONT_STYLE = ('verdana', 11, 'normal')
     __MODULATION_OPTIONS = ['Please select', 'MOD_2FSK', 'MOD_GFSK', 'MOD_ASK_OOK', 'MOD_MSK']
 
-    def __init__(self, window_title, window_resizable, bg_color):
+    def __init__(self, window_title, window_resizable, bg_color, show_menu):
         """
         Overwrite base tkinter object
 
@@ -23,6 +23,8 @@ class ApplicationUi(BaseUi):
         :param window_resizable: set windows resizeable true or false
         :type bg_color: str
         :param bg_color: color code ('#ddd')
+        :type show_menu: bool
+        :param show_menu: set menu visible true or false
         """
         # initialize logging and set logging level
         self.__logger = logging.getLogger(__name__)
@@ -52,7 +54,7 @@ class ApplicationUi(BaseUi):
         self._btn_copy = None
         self._btn_receive = None
 
-        BaseUi.__init__(self, window_title, window_resizable, bg_color)
+        BaseUi.__init__(self, window_title, window_resizable, bg_color, show_menu)
 
     def __add_message_hex_to_list(self, value):
         """
