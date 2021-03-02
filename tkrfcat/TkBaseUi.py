@@ -1,8 +1,11 @@
 import logging
-from tkinter import Tk, Menu, Toplevel, Label, INSERT, FALSE
+from tkinter import Tk, Menu, Toplevel, Label, FALSE
 
 
 class BaseUi:
+
+    __FONT_HEADLINE = ('verdana', 13, 'bold')
+    __FONT_STYLE = ('verdana', 11, 'normal')
 
     def __init__(self, window_title, window_resizable, bg_color, show_menu):
         """
@@ -65,10 +68,16 @@ class BaseUi:
         """
         window_about = Toplevel(self._tk_obj)
         window_about.title("About " + str(self.__window_title))
-        window_about.geometry("200x400")
+        window_about.geometry("250x450")
 
-        about_ety = Label(window_about, text="lorem ipsum dolor sit amet...")
-        about_ety.pack()
+        about_ety_headline = Label(window_about, text="What's this?")
+        about_ety_headline.configure(font=self.__FONT_HEADLINE)
+        about_ety_headline.pack()
+
+        txt = "Lorem ipsum dolor sit amet"
+        about_ety_text = Label(window_about, text=txt)
+        about_ety_text.configure(font=self.__FONT_STYLE)
+        about_ety_text.pack()
 
     def __create_help_window(self):
         """
@@ -76,10 +85,16 @@ class BaseUi:
         """
         window_help = Toplevel(self._tk_obj)
         window_help.title(str(self.__window_title) + " Help")
-        window_help.geometry("200x400")
+        window_help.geometry("250x450")
 
-        help_ety = Label(window_help, text="lorem ipsum dolor sit amet...")
-        help_ety.pack()
+        help_ety_headline = Label(window_help, text="Help needed?")
+        help_ety_headline.configure(font=self.__FONT_HEADLINE)
+        help_ety_headline.pack()
+
+        txt = 'lorem ipsum dolor sit amet'
+        help_ety_text = Label(window_help, text=txt)
+        help_ety_text.configure(font=self.__FONT_STYLE)
+        help_ety_text.pack()
 
     def run_app(self):
         """
