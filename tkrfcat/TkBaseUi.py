@@ -1,5 +1,5 @@
 import logging
-from tkinter import Tk, Menu, Toplevel, Label, FALSE
+from tkinter import Tk, Menu, Toplevel, Label, FALSE, BOTH
 
 
 class BaseUi:
@@ -66,18 +66,27 @@ class BaseUi:
         """
         Create about window
         """
-        window_about = Toplevel(self._tk_obj)
+        window_about = Toplevel(self._tk_obj, bg='#ccc')
         window_about.title("About " + str(self.__window_title))
-        window_about.geometry("250x450")
+        window_about.geometry("250x250")
+        window_about.resizable(width=FALSE, height=FALSE)
 
         about_ety_headline = Label(window_about, text="What's this?")
-        about_ety_headline.configure(font=self.__FONT_HEADLINE)
+        about_ety_headline.configure(font=self.__FONT_HEADLINE, background='#ccc')
         about_ety_headline.pack()
 
-        txt = "Lorem ipsum dolor sit amet"
+        txt = "This is a simple GUI for RfCat\n" \
+              "via Python tkinter.\n\n" \
+              "The developer of this tool is not\n" \
+              "responsible for issues, mistakes\n" \
+              "or illegal activities!\n\n" \
+              "Feel free to use this software as is\n" \
+              "for personal use only.\n" \
+              "Do not use this code in other\n" \
+              "projects or in commercial products.\n"
         about_ety_text = Label(window_about, text=txt)
-        about_ety_text.configure(font=self.__FONT_STYLE)
-        about_ety_text.pack()
+        about_ety_text.configure(font=self.__FONT_STYLE, background='#ccc')
+        about_ety_text.pack(fill=BOTH)
 
     def __create_help_window(self):
         """
@@ -86,6 +95,7 @@ class BaseUi:
         window_help = Toplevel(self._tk_obj)
         window_help.title(str(self.__window_title) + " Help")
         window_help.geometry("250x450")
+        window_help.resizable(width=FALSE, height=FALSE)
 
         help_ety_headline = Label(window_help, text="Help needed?")
         help_ety_headline.configure(font=self.__FONT_HEADLINE)
